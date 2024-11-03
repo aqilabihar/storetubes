@@ -29,3 +29,7 @@ $routes->post('/rapat/save', 'Rapat::save'); // Rute untuk menyimpan rapat
 $routes->get('/rapat/show', 'Rapat::show');
 
 $routes->get('/beranda', 'BerandaController::index');
+$routes->post('/beranda/absenHadir/(:num)', 'BerandaController::absenHadir/$1');
+$routes->get('/beranda/attendanceList/(:num)', 'BerandaController::attendanceList/$1');
+
+$routes->get('attendance/list/(:num)', 'AttendanceController::list/$1');

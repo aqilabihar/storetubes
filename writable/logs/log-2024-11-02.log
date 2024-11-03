@@ -1,0 +1,328 @@
+CRITICAL - 2024-11-02 14:48:37 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: /]
+in APPPATH\Views\beranda.php on line 27.
+ 1 APPPATH\Views\beranda.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 27)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(64): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 15:13:07 --> ErrorException: Undefined variable $userRole
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 117.
+ 1 APPPATH\Views\beranda.php(117): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userRole', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 117)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(67): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 15:15:28 --> ErrorException: Undefined array key "nama_role"
+[Method: GET, Route: beranda]
+in APPPATH\Controllers\BerandaController.php on line 34.
+ 1 APPPATH\Controllers\BerandaController.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_role"', 'C:\\laragon\\www\\storetubes\\app\\Controllers\\BerandaController.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 17:33:17 --> ErrorException: Undefined variable $userId
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 107.
+ 1 APPPATH\Views\beranda.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userId', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 107)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(104): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 17:44:07 --> ErrorException: Undefined variable $userId
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 107.
+ 1 APPPATH\Views\beranda.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userId', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 107)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(109): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 17:57:06 --> ErrorException: Undefined variable $rapat
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 41.
+ 1 APPPATH\Views\beranda.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rapat', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 41)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 17:58:48 --> ErrorException: Undefined variable $rapat
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 41.
+ 1 APPPATH\Views\beranda.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rapat', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 41)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 17:58:54 --> ErrorException: Undefined variable $rapat
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 41.
+ 1 APPPATH\Views\beranda.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rapat', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 41)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 17:58:57 --> ErrorException: Undefined variable $rapat
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 41.
+ 1 APPPATH\Views\beranda.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rapat', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 41)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:01:43 --> ErrorException: Undefined array key "id_users"
+[Method: GET, Route: beranda/attendanceList/6]
+in APPPATH\Controllers\BerandaController.php on line 143.
+ 1 APPPATH\Controllers\BerandaController.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_users"', 'C:\\laragon\\www\\storetubes\\app\\Controllers\\BerandaController.php', 143)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->attendanceList('6')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:02:53 --> Error: Call to undefined method App\Controllers\BerandaController::hasAccessToMeeting()
+[Method: GET, Route: beranda/attendanceList/6]
+in APPPATH\Controllers\BerandaController.php on line 131.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->attendanceList('6')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:02:55 --> Error: Call to undefined method App\Controllers\BerandaController::hasAccessToMeeting()
+[Method: GET, Route: beranda/attendanceList/6]
+in APPPATH\Controllers\BerandaController.php on line 131.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->attendanceList('6')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:04:35 --> ErrorException: Undefined array key "id_users"
+[Method: GET, Route: beranda/attendanceList/6]
+in APPPATH\Controllers\BerandaController.php on line 143.
+ 1 APPPATH\Controllers\BerandaController.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_users"', 'C:\\laragon\\www\\storetubes\\app\\Controllers\\BerandaController.php', 143)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->attendanceList('6')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:04:54 --> ErrorException: Undefined array key "id_users"
+[Method: GET, Route: beranda/attendanceList/6]
+in APPPATH\Controllers\BerandaController.php on line 143.
+ 1 APPPATH\Controllers\BerandaController.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_users"', 'C:\\laragon\\www\\storetubes\\app\\Controllers\\BerandaController.php', 143)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->attendanceList('6')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:05:15 --> ErrorException: Undefined array key "id_users"
+[Method: GET, Route: beranda/attendanceList/6]
+in APPPATH\Controllers\BerandaController.php on line 143.
+ 1 APPPATH\Controllers\BerandaController.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_users"', 'C:\\laragon\\www\\storetubes\\app\\Controllers\\BerandaController.php', 143)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->attendanceList('6')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:05:56 --> ErrorException: Undefined array key "id_users"
+[Method: GET, Route: beranda/attendanceList/6]
+in APPPATH\Controllers\BerandaController.php on line 143.
+ 1 APPPATH\Controllers\BerandaController.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_users"', 'C:\\laragon\\www\\storetubes\\app\\Controllers\\BerandaController.php', 143)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->attendanceList('6')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:06:05 --> ErrorException: Undefined array key "id_users"
+[Method: GET, Route: beranda/attendanceList/6]
+in APPPATH\Controllers\BerandaController.php on line 143.
+ 1 APPPATH\Controllers\BerandaController.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_users"', 'C:\\laragon\\www\\storetubes\\app\\Controllers\\BerandaController.php', 143)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->attendanceList('6')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:06:15 --> ErrorException: Undefined array key "id_users"
+[Method: GET, Route: beranda/attendanceList/6]
+in APPPATH\Controllers\BerandaController.php on line 143.
+ 1 APPPATH\Controllers\BerandaController.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_users"', 'C:\\laragon\\www\\storetubes\\app\\Controllers\\BerandaController.php', 143)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->attendanceList('6')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:07:08 --> Error: Call to undefined method App\Controllers\BerandaController::hasAccessToMeeting()
+[Method: GET, Route: beranda/attendanceList/6]
+in APPPATH\Controllers\BerandaController.php on line 131.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->attendanceList('6')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:12:38 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 23.
+ 1 APPPATH\Views\beranda.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:12:42 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 23.
+ 1 APPPATH\Views\beranda.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:12:44 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 23.
+ 1 APPPATH\Views\beranda.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:12:49 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 23.
+ 1 APPPATH\Views\beranda.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:12:53 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 23.
+ 1 APPPATH\Views\beranda.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-02 18:13:01 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 23.
+ 1 APPPATH\Views\beranda.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')

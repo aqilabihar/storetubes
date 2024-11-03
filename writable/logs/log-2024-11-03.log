@@ -1,0 +1,45 @@
+CRITICAL - 2024-11-03 07:09:37 --> ErrorException: Undefined array key "status"
+[Method: GET, Route: attendance/list/4]
+in APPPATH\Views\attendance_list.php on line 24.
+ 1 APPPATH\Views\attendance_list.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status"', 'C:\\laragon\\www\\storetubes\\app\\Views\\attendance_list.php', 24)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\attendance_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('attendance_list', [], true)
+ 5 APPPATH\Controllers\AttendanceController.php(38): view('attendance_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AttendanceController->list('4')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttendanceController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-03 07:11:08 --> ErrorException: Undefined array key "status"
+[Method: GET, Route: attendance/list/4]
+in APPPATH\Views\attendance_list.php on line 24.
+ 1 APPPATH\Views\attendance_list.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status"', 'C:\\laragon\\www\\storetubes\\app\\Views\\attendance_list.php', 24)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\attendance_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('attendance_list', [], true)
+ 5 APPPATH\Controllers\AttendanceController.php(38): view('attendance_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AttendanceController->list('4')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttendanceController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
+CRITICAL - 2024-11-03 07:48:17 --> ErrorException: Undefined variable $has_attended
+[Method: GET, Route: beranda]
+in APPPATH\Views\beranda.php on line 109.
+ 1 APPPATH\Views\beranda.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $has_attended', 'C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php', 109)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\storetubes\\app\\Views\\beranda.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('beranda', [], true)
+ 5 APPPATH\Controllers\BerandaController.php(110): view('beranda', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\storetubes\\public\\index.php')
