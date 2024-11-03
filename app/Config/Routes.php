@@ -28,6 +28,14 @@ $routes->get('/rapat/create', 'Rapat::create'); // Rute untuk halaman buat rapat
 $routes->post('/rapat/save', 'Rapat::save'); // Rute untuk menyimpan rapat
 $routes->get('/rapat/show', 'Rapat::show');
 
+
+//routes tambahan
+$routes->get('/kita_rapat', 'MeetController::tambah'); //new controller for buat rapat
+$routes->get('/beranda_copy', 'MeetController::buattrapat');
+$routes->get('/tambah_rapat', 'MeetController::tambahrapat');
+
+
+
 $routes->get('/beranda', 'BerandaController::index');
 $routes->post('/beranda/absenHadir/(:num)', 'BerandaController::absenHadir/$1');
 $routes->get('/beranda/attendanceList/(:num)', 'BerandaController::attendanceList/$1');
