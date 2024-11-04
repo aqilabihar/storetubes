@@ -6,42 +6,59 @@ use App\Models\UserModel;
 use App\Models\RapatModel;
 use App\Models\RoleRapatModel;
 use App\Models\AbsensiModel;
+use App\Models\TranskripsiRapatModel;
 
 
 class BerandaController extends BaseController
 {
+
+    protected $TranskripsiRapatModel;
+
+    public function __construct()
+    {
+        // Load the TranskripsiRapatModel
+        $this->TranskripsiRapatModel = new TranskripsiRapatModel();
+    }
     public function index()
     {
-
-
-
-        // Pass $userRole to the view
+        // Load models
+        $rapatModel = new RapatModel();
+        $transkripsiModel = new TranskripsiRapatModel();
+        $userModel = new UserModel();
+        $roleRapatModel = new RoleRapatModel();
         $absensiModel = new AbsensiModel();
 
+        // Check if the user is logged in
         if (!session()->has('user_id')) {
-            return redirect()->to('/auth/login'); // Mengarahkan ke halaman login jika belum login
+            return redirect()->to('/auth/login'); // Redirect to login if not logged in
         }
-        $userModel = new UserModel();
-        $rapatModel = new RapatModel();
-        $roleRapatModel = new RoleRapatModel();
+
         // Get the logged-in user's ID
-        if (!session()->has('user_id')) {
-            echo "User ID not found in session.";
-            exit; // Stop further execution for debugging
+        $userId = session()->get('user_id');
+
+        // Fetch meetings
+        $rapatList = $rapatModel->findAll();
+
+        // Fetch transcriptions
+        $transcriptions = [];
+        foreach ($rapatList as $rapat) {
+            $transcription = $transkripsiModel->where('id_rapat', $rapat['id'])->first();
+            if ($transcription) {
+                $transcriptions[$rapat['id']] = $transcription['transkripsi']; // Use 'transkripsi' field
+            } else {
+                $transcriptions[$rapat['id']] = null; // No transcription available
+            }
         }
 
-        $userId = session()->get('user_id');
-        echo "User ID: " . $userId; // Debug output
-        $data['userId'] = $userId;
+        // Prepare user data
+        $user = $userModel->find($userId);
 
-        // Initialize user role variable
         // Initialize user role variable
         $userRole = ''; // Default in case no role is found
 
         // Check if the user has a specific role in any meeting
         $userRoleData = $roleRapatModel->where('id_users', $userId)->first();
         if ($userRoleData) {
-            // Assuming 'id_roles' is the field in your 'rolerapat' table that identifies roles
             switch ($userRoleData['id_roles']) {
                 case 1:
                     $userRole = 'ketua';
@@ -56,78 +73,73 @@ class BerandaController extends BaseController
                     $userRole = 'unknown';
             }
         }
-        $data['userRole'] = $userRole;
 
-
-
-        // Ambil data pengguna yang sedang login
-        $user_id = session()->get('user_id');
-        $data['user'] = $userModel->find($user_id);
-
-        // Mengambil semua data rapat
-        $data['rapats'] = $rapatModel->findAll();
-
-        // Mengambil data peran untuk setiap rapat
-        $data['roles'] = [];
-        foreach ($data['rapats'] as $rapat) {
-            $data['roles'][$rapat['id']] = $roleRapatModel->where('id_rapat', $rapat['id'])->findAll();
+        // Fetch roles and user names
+        $roles = [];
+        foreach ($rapatList as $rapat) {
+            $roles[$rapat['id']] = $roleRapatModel->where('id_rapat', $rapat['id'])->findAll();
         }
 
-        // Menyiapkan array untuk menyimpan nama pengguna berdasarkan ID
+        // Prepare user names array
         $userNames = [];
-        $users = $userModel->findAll();
-        foreach ($users as $user) {
-            $userNames[$user['id']] = $user['nama'];
+        foreach ($userModel->findAll() as $userRecord) {
+            $userNames[$userRecord['id']] = $userRecord['nama'];
         }
 
-        // Menyimpan nama pengguna ke dalam data
-        $data['userNames'] = $userNames;
-
-        // Menghitung jumlah rapat yang diikuti oleh pengguna
+        // Calculate the number of meetings attended by the user
         $jumlah_rapat = [
             'ketua' => 0,
             'notulensi' => 0,
             'anggota' => 0,
         ];
 
-        foreach ($data['roles'] as $role) {
+        foreach ($roles as $role) {
             foreach ($role as $item) {
-                if ($item['id_users'] == $user_id) {
-                    if ($item['id_roles'] == 1) { // ID untuk ketua
-                        $jumlah_rapat['ketua']++;
-                    } elseif ($item['id_roles'] == 2) { // ID untuk notulen
-                        $jumlah_rapat['notulensi']++;
-                    } elseif ($item['id_roles'] == 3) { // ID untuk anggota
-                        $jumlah_rapat['anggota']++;
+                if ($item['id_users'] == $userId) {
+                    switch ($item['id_roles']) {
+                        case 1:
+                            $jumlah_rapat['ketua']++;
+                            break;
+                        case 2:
+                            $jumlah_rapat['notulensi']++;
+                            break;
+                        case 3:
+                            $jumlah_rapat['anggota']++;
+                            break;
                     }
                 }
             }
         }
 
-        // Mendapatkan daftar rapat
-        $data['rapats'] = $rapatModel->findAll();
-
-        // Menyiapkan array untuk menyimpan status kehadiran pengguna di setiap rapat
-        $data['has_attended'] = [];
-
-        // Loop setiap rapat dan cek apakah user sudah absen
-        foreach ($data['rapats'] as $rapat) {
-            // Cek apakah pengguna sudah hadir di rapat ini
+        // Prepare attendance status for each meeting
+        $has_attended = [];
+        foreach ($rapatList as $rapat) {
             $attendanceRecord = $absensiModel->where([
                 'id_rapat' => $rapat['id'],
                 'id_user' => $userId,
                 'status_kehadiran' => 'hadir'
             ])->first();
-
-            // Jika ada record, berarti sudah absen; jika tidak ada, berarti belum
-            $data['has_attended'][$rapat['id']] = $attendanceRecord ? true : false;
+            $has_attended[$rapat['id']] = $attendanceRecord ? true : false; // True if attended, false otherwise
         }
 
-        // Menyimpan jumlah rapat ke dalam data
-        $data['jumlah_rapat'] = $jumlah_rapat;
+        // Prepare the data for the view, including userId
+        $data = [
+            'user' => $user,
+            'rapats' => $rapatList, // Keep the variable name as 'rapats'
+            'transcriptions' => $transcriptions,
+            'userRole' => $userRole,
+            'roles' => $roles,
+            'userNames' => $userNames,
+            'jumlah_rapat' => $jumlah_rapat,
+            'has_attended' => $has_attended,
+            'userId' => $userId, // Pass userId to the view
+        ];
 
-        return view('beranda', $data); // Mengembalikan view untuk beranda
+        // Return the view for beranda
+        return view('beranda', $data);
     }
+
+
     // BerandaController
     public function absenHadir($idRapat)
     {
@@ -213,5 +225,139 @@ class BerandaController extends BaseController
         }
 
         return $this->response->setJSON($attendanceData); // Return data as JSON
+    }
+
+    private function getUserRoleData($userId)
+    {
+        $roleRapatModel = new \App\Models\RoleRapatModel();
+
+        // Query to get role data for the specific user
+        return $roleRapatModel->where('user_id', $userId)->first();
+    }
+
+    public function transcription($meetingId)
+    {
+        // Get the logged-in user's ID from the session
+        $userId = session()->get('user_id');
+
+        // Load RapatModel to retrieve meeting details
+        $rapatModel = new \App\Models\RapatModel();
+        $rapat = $rapatModel->find($meetingId);
+
+        // Check if the meeting exists
+        if (!$rapat) {
+            return redirect()->to('/beranda')->with('error', 'Meeting not found');
+        }
+
+        // Load transcription model to retrieve transcription data
+        $transcriptionModel = new \App\Models\TranskripsiRapatModel();
+        $transcription = $transcriptionModel->where('id_rapat', $meetingId)->first();
+
+        // Retrieve user's role
+        $userRoleData = $this->getUserRoleData($userId);
+        if (!$userRoleData || $userRoleData['id_roles'] != 2) {
+            return redirect()->to('/beranda')->with('error', 'Not authorized');
+        }
+
+        // Pass data to the view, including the $rapat variable
+        return view('transcription_view', [
+            'rapat' => $rapat, // Pass the rapat data to the view
+            'transcription' => $transcription,
+            'idRapat' => $meetingId
+        ]);
+    }
+
+
+
+
+    public function saveTranscription($idRapat)
+    {
+        $transkripsiModel = new TranskripsiRapatModel();
+
+        // Get the transcription data from the POST request
+        $data = [
+            'id_rapat' => $idRapat,
+            'transkripsi' => $this->request->getPost('transkripsi'), // Ensure you are getting the right key
+        ];
+
+        // Save the transcription to the database
+        if ($transkripsiModel->insert($data)) {
+            return redirect()->to('/beranda')->with('success', 'Transkripsi berhasil disimpan.');
+        } else {
+            return redirect()->to('/beranda')->with('error', 'Gagal menyimpan transkripsi.');
+        }
+    }
+
+
+
+
+    public function transcribe($meetingId)
+    {
+        // Only allow notulen role to access this page
+        $userId = session()->get('user_id');
+        $roleRapatModel = new RoleRapatModel();
+        $userRole = $roleRapatModel->where('id_rapat', $meetingId)
+            ->where('id_users', $userId)
+            ->where('id_roles', 2) // 2 represents notulen
+            ->first();
+
+        if ($userRole) {
+            $data['meetingId'] = $meetingId;
+            return view('transcribe', $data); // Display the transcription view
+        } else {
+            return redirect()->to('/beranda')->with('error', 'You do not have access to transcribe this meeting.');
+        }
+    }
+    public function viewTranscription($meetingId)
+    {
+        // Load RapatModel and TranskripsiRapatModel
+        $rapatModel = new \App\Models\RapatModel();
+        $transcriptionModel = new \App\Models\TranskripsiRapatModel();
+
+        // Fetch meeting details
+        $rapat = $rapatModel->find($meetingId);
+        if (!$rapat) {
+            return redirect()->to('/beranda')->with('error', 'Rapat tidak ditemukan.');
+        }
+
+        // Fetch transcription details
+        $transcription = $transcriptionModel->where('id_rapat', $meetingId)->first();
+
+        // Pass data to the view
+        return view('transcription_view', [
+            'rapat' => $rapat,
+            'transcription' => $transcription,
+            'idRapat' => $meetingId
+        ]);
+    }
+
+    public function transcriptionView($meetingId)
+    {
+        $userId = session()->get('user_id');
+
+        // Check if user has the 'notulen' role for the meeting
+        $roleRapatModel = new RoleRapatModel();
+        $userRoleData = $roleRapatModel->where('id_rapat', $meetingId)
+            ->where('id_users', $userId)
+            ->first();
+
+        if (!$userRoleData || $userRoleData['id_roles'] != 2) {
+            return redirect()->to('/beranda')->with('error', 'Not authorized');
+        }
+
+        // Load meeting data
+        $rapatModel = new RapatModel();
+        $rapat = $rapatModel->find($meetingId);
+
+        // Load transcription data
+        $transcriptionModel = new TranskripsiRapatModel();
+        $transcription = $transcriptionModel->where('id_rapat', $meetingId)->first();
+
+        // Pass the meeting and transcription data to the view
+        return view('transcription_view', [
+            'rapat' => $rapat, // Ensure this variable is set
+            'transcription' => $transcription,
+            'idRapat' => $meetingId // Pass the meeting ID for saving transcriptions
+        ]);
     }
 }

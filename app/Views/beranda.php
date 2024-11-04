@@ -63,6 +63,18 @@
                         <td><?= esc($rapat['ruangan']) ?></td>
                         <td><?= esc($rapat['waktu_mulai']) ?></td>
                         <td><?= esc($rapat['waktu_selesai']) ?></td>
+                        <td><?= esc($rapat['nama_rapat']) ?></td>
+                        <td><?= esc($rapat['ruangan']) ?></td>
+                        <h4>Rapat ID: <?= esc($rapat['id']) ?></h4> <!-- Access the 'id' from the $rapat variable -->
+                        <?php
+                        // Get the transcription for this specific meeting
+                        $transcription = isset($transcriptions[$rapat['id']]) ? $transcriptions[$rapat['id']] : null;
+                        ?>
+                        <?php if ($transcription): ?>
+                            <p>Transkripsi: <?= esc($transcription) ?></p>
+                        <?php else: ?>
+                            <p>Tidak ada transkripsi tersedia.</p>
+                        <?php endif; ?>
                         <td>
                             <?php
                             $ketua = 'Tidak Ada';
@@ -105,6 +117,15 @@
                             echo esc(implode(', ', $anggota)) ?: 'Tidak Ada';
                             ?>
                         </td>
+
+                        <td>
+                            <?php if (in_array($userId, $notulen_ids)): ?>
+                                <a href="<?= base_url('/transcription/view/' . $rapat['id']); ?>" class="btn btn-primary">rekam transkip</a>
+                            <?php else: ?>
+                                <span>No access to view transcription</span>
+                            <?php endif; ?>
+                        </td>
+
                         <td>
                             <?php
                             $isMember = false;
