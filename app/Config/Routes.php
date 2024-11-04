@@ -41,3 +41,7 @@ $routes->post('/beranda/absenHadir/(:num)', 'BerandaController::absenHadir/$1');
 $routes->get('/beranda/attendanceList/(:num)', 'BerandaController::attendanceList/$1');
 
 $routes->get('attendance/list/(:num)', 'AttendanceController::list/$1');
+$routes->get('/transcription/view/(:num)', 'BerandaController::viewTranscription/$1');
+$routes->post('/beranda/saveTranscription/(:num)', 'BerandaController::saveTranscription/$1');
+
+$routes->get('/notulen_view', 'NotulenController::index');

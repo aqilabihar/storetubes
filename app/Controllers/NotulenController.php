@@ -9,7 +9,7 @@ use App\Models\AbsensiModel;
 use App\Models\TranskripsiRapatModel;
 
 
-class BerandaController extends BaseController
+class NotulenController extends BaseController
 {
 
     protected $TranskripsiRapatModel;
@@ -135,12 +135,12 @@ class BerandaController extends BaseController
             'userId' => $userId, // Pass userId to the view
         ];
 
-        // Return the view for beranda
-        return view('beranda', $data);
+        // Return the view for notulen_view
+        return view('notulen_view', $data);
     }
 
 
-    // BerandaController
+    // notulen_viewController
     public function absenHadir($idRapat)
     {
         $userId = session()->get('user_id');
@@ -154,7 +154,7 @@ class BerandaController extends BaseController
                 'status_kehadiran' => 'hadir'
             ]);
         }
-        return redirect()->to('/beranda')->with('message', 'Attendance recorded');
+        return redirect()->to('/notulen_view')->with('message', 'Attendance recorded');
     }
     protected function hasAccessToMeeting($meetingId, $roleId)
     {
@@ -204,7 +204,7 @@ class BerandaController extends BaseController
             return view('attendance_list', ['attendanceData' => $attendanceData]);
         } else {
             // Redirect or show error if the user does not have access
-            return redirect()->to('/beranda')->with('error', 'You do not have access to view this attendance.');
+            return redirect()->to('/notulen_view')->with('error', 'You do not have access to view this attendance.');
         }
     }
     public function getAttendance($meetingId)
@@ -246,7 +246,7 @@ class BerandaController extends BaseController
 
         // Check if the meeting exists
         if (!$rapat) {
-            return redirect()->to('/beranda')->with('error', 'Meeting not found');
+            return redirect()->to('/notulen_view')->with('error', 'Meeting not found');
         }
 
         // Load transcription model to retrieve transcription data
@@ -256,7 +256,7 @@ class BerandaController extends BaseController
         // Retrieve user's role
         $userRoleData = $this->getUserRoleData($userId);
         if (!$userRoleData || $userRoleData['id_roles'] != 2) {
-            return redirect()->to('/beranda')->with('error', 'Not authorized');
+            return redirect()->to('/notulen_view')->with('error', 'Not authorized');
         }
 
         // Pass data to the view, including the $rapat variable
@@ -282,9 +282,9 @@ class BerandaController extends BaseController
 
         // Save the transcription to the database
         if ($transkripsiModel->insert($data)) {
-            return redirect()->to('/beranda')->with('success', 'Transkripsi berhasil disimpan.');
+            return redirect()->to('/notulen_view')->with('success', 'Transkripsi berhasil disimpan.');
         } else {
-            return redirect()->to('/beranda')->with('error', 'Gagal menyimpan transkripsi.');
+            return redirect()->to('/notulen_view')->with('error', 'Gagal menyimpan transkripsi.');
         }
     }
 
@@ -305,7 +305,7 @@ class BerandaController extends BaseController
             $data['meetingId'] = $meetingId;
             return view('transcribe', $data); // Display the transcription view
         } else {
-            return redirect()->to('/beranda')->with('error', 'You do not have access to transcribe this meeting.');
+            return redirect()->to('/notulen_view')->with('error', 'You do not have access to transcribe this meeting.');
         }
     }
     public function viewTranscription($meetingId)
@@ -317,7 +317,7 @@ class BerandaController extends BaseController
         // Fetch meeting details
         $rapat = $rapatModel->find($meetingId);
         if (!$rapat) {
-            return redirect()->to('/beranda')->with('error', 'Rapat tidak ditemukan.');
+            return redirect()->to('/notulen_view')->with('error', 'Rapat tidak ditemukan.');
         }
 
         // Fetch transcription details
@@ -342,7 +342,7 @@ class BerandaController extends BaseController
             ->first();
 
         if (!$userRoleData || $userRoleData['id_roles'] != 2) {
-            return redirect()->to('/beranda')->with('error', 'Not authorized');
+            return redirect()->to('/notulen_view')->with('error', 'Not authorized');
         }
 
         // Load meeting data

@@ -89,7 +89,7 @@
 
         <!-- Logout Button -->
         <div class="mb-3">
-            <a href="<?= base_url('/auth/logout'); ?>" class="btn btn-danger">Logout</a>
+
             <a href="<?= base_url('/rapat/create'); ?>" class="btn btn-primary ml-2">Tambah Rapat</a>
         </div>
 

@@ -22,6 +22,7 @@ class MeetController extends BaseController
 
         // Mengambil semua data rapat
         $data['rapats'] = $rapatModel->findAll();
+        
 
         // Mengambil data peran untuk setiap rapat
         $data['roles'] = [];

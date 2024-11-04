@@ -83,7 +83,7 @@ class Rapat extends BaseController
         ];
         $roleRapatModel->insert($dataRoleNotulen);
 
-        return redirect()->to('/rapat/show'); // Redirect ke halaman daftar rapat
+        return redirect()->to('/beranda'); // Redirect ke halaman daftar rapat
     }
 
     // public function show()
